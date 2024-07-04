@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licornes.com - Location de Licornes</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+        }
+        header {
+            background-color: #ff69b4;
+            padding: 1rem;
+            text-align: center;
+            color: white;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #ffb6c1;
+        }
+        nav a {
+            padding: 1rem;
+            margin: 0.5rem;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+        nav a:hover {
+            background-color: #ff69b4;
+        }
+        main {
+            padding: 2rem;
+            text-align: center;
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+        footer {
+            background-color: #ffb6c1;
+            padding: 1rem;
+            text-align: center;
+            color: white;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Licornes.com</h1>
+        <p>Spécialiste de la location de licornes</p>
+    </header>
+    <nav>
+        <a href="#" onclick="showSection('services')">Nos Services</a>
+        <a href="#" onclick="showSection('tarifs')">Nos Tarifs</a>
+        <a href="#" onclick="showSection('contact')">Nous Contacter</a>
+    </nav>
+    <main>
+        <section id="services" class="section active">
+            <h2>Nos Services</h2>
+            <p>Nous proposons la location de licornes pour toutes vos occasions spéciales : mariages, anniversaires, fêtes d'enfants, et bien plus encore.</p>
+        </section>
+        <section id="tarifs" class="section">
+            <h2>Nos Tarifs</h2>
+            <p>Découvrez nos tarifs compétitifs pour la location de licornes. Nous avons des forfaits adaptés à tous les budgets.</p>
+        </section>
+        <section id="contact" class="section">
+            <h2>Nous Contacter</h2>
+            <p>Pour toute demande de renseignements ou de réservation, veuillez nous contacter via le formulaire ci-dessous.</p>
+            <form>
+                <div>
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="message">Message :</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <div>
+                    <button type="submit">Envoyer</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Licornes.com. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
